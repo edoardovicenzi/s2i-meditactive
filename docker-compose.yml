@@ -1,0 +1,36 @@
+services:
+
+  app:
+    container_name: meditactiveAPI
+    image: app
+    restart: always
+    build:
+        context: .
+        dockerfile: Dockerfile
+        target: base
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret'
+      MYSQL_USER: 'meditactive'
+      MYSQL_PASSWORD: 'meditactiveStart2Impact'
+      MYSQL_DATABASE: 'meditactive'
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+
+volumes:
+  mysqldata:

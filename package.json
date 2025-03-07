@@ -1,0 +1,17 @@
+{
+    "name": "s2i-meditactive",
+    "version": "1.0.0",
+    "description": "A simple express.js RESTful API for handling your meditation objectives with date intervals",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Edoardo Vicenzi",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.21.2",
+        "mysql2": "^3.13.0"
+    }
+}
