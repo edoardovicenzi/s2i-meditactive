@@ -1,0 +1,38 @@
+site_name: MeditActive
+site_url: 'https://edoardovicenzi.github.io/s2i-meditactive/'
+repo_url: 'https://github.com/edoardovicenzi/s2i-meditactive'
+repo_name: 'edoardovicenzi/s2i-meditactive'
+theme:
+  name: material
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  language: en 
+  features:
+    - search.share
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - toc.follow
+    - navigation.footer
+plugins:
+  - search
+  - tags
